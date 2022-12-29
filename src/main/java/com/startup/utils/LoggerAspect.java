@@ -21,12 +21,12 @@ public class LoggerAspect {
         logger.info("Entring  : "+ joinPoint.getSignature().getName());
 
     }
-    @After("execution(* com.startup.services.*.*(..))")
+    //@After("execution(* com.startup.services.*.*(..))")
     public void logAfter(JoinPoint joinPoint) throws InterruptedException {
         logger.info("Exiting  : "+ joinPoint.getSignature().getName());
     }
 
-    @Around("execution(* com.startup.repositories.*.*(..))")
+   // @Around("execution(* com.startup.repositories.*.*(..))")
     public Object log(ProceedingJoinPoint jp) throws Throwable {
         String methodeName = jp.getSignature().getName();
         Object[] args = jp.getArgs();
